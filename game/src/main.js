@@ -3,6 +3,7 @@
 //   ?shot=start  title screen over the garden (default)
 //   ?shot=play   level 1 mid-game, two differences circled, three still hidden
 //   ?shot=play2  level 3 mid-game, four circled, six still hidden
+//   ?shot=harbour a quick look at level 2 mid-game (two circled, five hidden)
 //   ?shot=end    the "you found them all" screen after the final scene
 // Screenshot modes freeze the timer so every capture is identical.
 import { LEVELS } from './levels.js';
@@ -74,6 +75,8 @@ if (shot === 'play') {
   stageMidGame(0, [0, 4], 300, 92, '✓ The tulip changed colour — 300 points! 3 to go in this scene.');
 } else if (shot === 'play2') {
   stageMidGame(2, [1, 3, 5, 8], 1000, 140, '✓ The fruit changed colour — 400 points! 6 to go in this scene.');
+} else if (shot === 'harbour') {
+  stageMidGame(1, [1, 4], 550, 118, '✓ A crate vanished from the stack — 250 points! 5 to go in this scene.');
 } else if (shot === 'end') {
   game.startLevel(2);
   game.stopTimer();
